@@ -1,7 +1,7 @@
-package Lmain;
+package main;
 
-import Lmain.LMateria.Controllers.ArbolBinario;
-import Lmain.LMateria.LModels.LNode;
+import main.Materia.Controllers.ArbolBinario;
+import main.Materia.Models.Node;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -16,22 +16,22 @@ public class App {
         ArbolBinario arbolBinario = new ArbolBinario();
 
         //PADRE ES 1
-        LNode nodeRoot = new LNode(1);
+        Node nodeRoot = new Node(1);
 
         //DEL PADRE PONER LOS HIJOS 2 Y 3 (IZQ, DER)
-        nodeRoot.setLeft(new LNode(2));
-        nodeRoot.setRight(new LNode(3));
+        nodeRoot.setLeft(new Node(2));
+        nodeRoot.setRight(new Node(3));
 
         //AGG AL HIJO DEL HIJO 
               //DEL 2 SALE 4 Y 5
               //VOY A LA RAIZ  Y OBTENGO LA INSRANCIA DEL DOS Y NUEVO INSTACIO OTRO NODO
-        nodeRoot.getLeft().setLeft(new LNode(4));
-        nodeRoot.getLeft().setRight(new LNode(5));
+        nodeRoot.getLeft().setLeft(new Node(4));
+        nodeRoot.getLeft().setRight(new Node(5));
 
-        nodeRoot.getRight().setRight(new LNode(6));
+        nodeRoot.getRight().setRight(new Node(6));
 
-        nodeRoot.getLeft().getLeft().setLeft(new LNode(7));
-        nodeRoot.getLeft().getRight().setLeft(new LNode(8));
+        nodeRoot.getLeft().getLeft().setLeft(new Node(7));
+        nodeRoot.getLeft().getRight().setLeft(new Node(8));
 
 
         //PRE ORDER
@@ -54,19 +54,6 @@ public class App {
 
         System.out.println("\nARBOL BINARIO INORDER RECURSIVO");
         arbolBinario.inOrderRecursivo(nodeRoot);
-
-
-
-
-
-
-
-        
-
-
-
-
-
 
 
     }

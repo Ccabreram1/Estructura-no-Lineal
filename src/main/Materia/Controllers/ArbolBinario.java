@@ -1,6 +1,7 @@
-package Lmain.LMateria.Controllers;
-import Lmain.LMateria.LModels.*;
+package main.Materia.Controllers;
 import java.util.Stack;
+
+import main.Materia.Models.*;
 
 public class ArbolBinario {
 
@@ -8,18 +9,18 @@ public class ArbolBinario {
 
     //RECORRIDO DEL ARBOL TIPO PRE ORDER
 
-    public void preOrderLoop (LNode root){
+    public void preOrderLoop (Node root){
         //VALIDAR QUE NO ESTE VACIO 
         if (root == null) {
             return;
         }
         //crea una pila tipo STACK
-        Stack<LNode> stack = new Stack<> ();
+        Stack<Node> stack = new Stack<> ();
         //AGG A LA PILA DE LA RAIZ PARA EMPEZAR EL RECORRIDO
          stack.push(root);
 
          while (!stack.isEmpty()) {
-            LNode node = stack.pop();
+            Node node = stack.pop();
 
             System.out.print(node.getValue() + "---");
 
@@ -38,7 +39,7 @@ public class ArbolBinario {
 
 
     //RECURSIVO DEL PRE ORDER
-     public void preOrderRecursivo (LNode node){
+     public void preOrderRecursivo (Node node){
         if (node != null) {
             System.out.print(node.getValue() + "---");
             preOrderRecursivo(node.getLeft());
@@ -50,17 +51,17 @@ public class ArbolBinario {
 
         ///POST ORDER
 
-     public void postOrderLoop (LNode root){
+     public void postOrderLoop (Node root){
         if (root == null) {
             return;
         }
-        Stack<LNode> stack1 = new Stack<>();
-        Stack<LNode> stack2 = new Stack<>();
+        Stack<Node> stack1 = new Stack<>();
+        Stack<Node> stack2 = new Stack<>();
 
         stack1.push(root);
 
         while (!stack1.isEmpty()) {
-            LNode node = stack1.pop();
+            Node node = stack1.pop();
             stack2.push(node);
 
 
@@ -73,7 +74,7 @@ public class ArbolBinario {
         }
 
         while (!stack2.isEmpty()) {
-            LNode node = stack2.pop();
+            Node node = stack2.pop();
             System.out.print(node.getValue() + "--");
 
             //if (node.getLeft() != null) {
@@ -89,7 +90,7 @@ public class ArbolBinario {
      //RECURSIVIDAD 
             //cambia el orden
 
-     public void postOrderRecursivo (LNode node){
+     public void postOrderRecursivo (Node node){
         if (node != null) {
             postOrderRecursivo(node.getLeft());
             postOrderRecursivo(node.getRight());
@@ -100,7 +101,7 @@ public class ArbolBinario {
 
         //IN ORDER
 
-      public void inOrderRecursivo (LNode node){
+      public void inOrderRecursivo (Node node){
         if (node != null) {
             inOrderRecursivo(node.getLeft());
             System.out.print(node.getValue() + "--");

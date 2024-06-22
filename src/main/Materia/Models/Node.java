@@ -1,13 +1,13 @@
-package Lmain.LMateria.LModels;
+package main.Materia.Models;
 
-public class LNode {
+public class Node {
 
 
     private int value;
-    private LNode left;
-    private LNode right;
+    private Node left;
+    private Node right;
 
-    public LNode (int value){
+    public Node (int value){
         this.value = value;
     }
 
@@ -19,19 +19,19 @@ public class LNode {
         this.value = value;
     }
 
-    public LNode getLeft() {
+    public Node getLeft() {
         return left;
     }
 
-    public void setLeft(LNode left) {
+    public void setLeft(Node left) {
         this.left = left;
     }
 
-    public LNode getRight() {
+    public Node getRight() {
         return right;
     }
 
-    public void setRight(LNode right) {
+    public void setRight(Node right) {
         this.right = right;
     }
 
