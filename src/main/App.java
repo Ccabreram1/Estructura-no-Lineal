@@ -2,7 +2,10 @@ package main;
 
 import main.Materia.Controllers.AVLTREE;
 import main.Materia.Controllers.ArbolBinario;
+import main.Materia.Controllers.Graph;
+import main.Materia.Controllers.Sets;
 import main.Materia.Models.Node;
+import main.Materia.Models.NodeGraph;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -65,9 +68,47 @@ public class App {
             tree.insert(value);
         }
 
-
-        
-
-
+       
+        runGraph();
     }
+
+
+    private static void runGraph() {
+        Graph grap = new Graph();
+
+        //agg nodos 
+        //NodeGraph node1 = new NodeGraph(1);
+        // NodeGraph node2 = new NodeGraph(2);
+        //NodeGraph node3 = new NodeGraph(3);
+        //NodeGraph node4 = new NodeGraph(4);
+        //NodeGraph node5 = new NodeGraph(5);
+
+        NodeGraph node1 = grap.addNode(1);
+        NodeGraph node2 = grap.addNode(2);
+        NodeGraph node3 = grap.addNode(3);
+        NodeGraph node4 = grap.addNode(4);
+        NodeGraph node5 = grap.addNode(5);
+
+        grap.addEdge(node1, node2);
+        grap.addEdge(node2, node4);
+        grap.addEdge(node1, node3);
+        grap.addEdge(node4, node5);
+
+        //imprime el grafo
+        grap.printGraph();
+
+        runSets();
+    }
+
+    private static void runSets(){
+        Sets variableClase = new Sets();
+    }
+
+
+
+
+
+
+
+
 }
